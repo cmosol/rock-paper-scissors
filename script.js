@@ -8,7 +8,6 @@ function playRound(player, computer) {
     if (player === computer) {
         console.log("Its a tie! "+player+ " matches " +computer+ "!");
         window.alert("Its a tie! "+player+ " matches " +computer+ "!");
-        return 0;
     }
     else {
         if (player ==='rock'&& computer === 'paper'){
@@ -43,33 +42,29 @@ function playRound(player, computer) {
 
 function game(){
     let playerScore = 0, computerScore = 0;
-    for (let i = 0; i < 5; i++) {
-        const playerSelection = prompt("choose rock, paper, or scissors").toLowerCase();
-        console.log(playerSelection);
-        if (validate(playerSelection)){
-            let win = playRound(playerSelection, computerPlay());
-            if (win===0){
-                i--;
-            }
-            else if (win===1){
+
+    const buttons = document.querySelectorAll('button');
+    
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            let win = playRound(button.id, computerPlay());
+            if (win===1){
                 playerScore++;
+                printScore(playerScore,computerScore);
             }
             else if (win===2){
                 computerScore++;
+                printScore(playerScore,computerScore);
             }
             else {
-                throw "error retrieving score"
+                printScore(playerScore,computerScore);
             }
-        }
-    }
-    if (playerScore > computerScore){
-        console.log("Game Over! You Win!");
-        window.alert("Game Over! You Win!");
-    }
-    else{
-        console.log("Game Over! Computer Wins!");
-        window.alert("Game Over! Computer Wins!");
-    }
+        });
+    });
+}
+
+function printScore(ps,cs){
+    console.log("player:"+ps+" computer: "+cs);
 }
 
 function translate(entry){
@@ -96,5 +91,6 @@ function validate(i) {
 }
 
 game();
+
 
 
