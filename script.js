@@ -54,13 +54,13 @@ function game(){
                 playerScore++;
                 player.textContent = "Player: "+playerScore;
                 printScore(playerScore,computerScore);
-                checkGameOver(playerScore, computerScore);
+                checkGameOver(playerScore, computerScore, buttons);
             }
             else if (win===2){
                 computerScore++;
                 computer.textContent = "Computer: "+computerScore;
                 printScore(playerScore,computerScore);
-                checkGameOver(playerScore, computerScore);
+                checkGameOver(playerScore, computerScore, buttons);
             }
             else {
                 printScore(playerScore,computerScore);
@@ -82,7 +82,19 @@ function checkGameOver(ps,cs){
 
 function printScore(ps,cs){
     console.log("player:"+ps+" computer: "+cs);
+
 }
+
+// function reload() {
+//     const container = document.querySelector('#container');
+//     const btns = document.querySelectorAll('button');
+//     btns.forEach((button) => {
+//         button.style.visibility='hidden';
+//     });
+//     const reload = document.querySelector('#reload');
+//     reload.addEventListener('click', () => location.reload());
+//     reload.style.display='block';
+// }
 
 function translate(entry){
     const dict = {
@@ -97,6 +109,7 @@ function translate(entry){
     }
 }
 
+document.querySelector('#reload').style.display='none';
 game();
 
 
