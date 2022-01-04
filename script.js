@@ -80,16 +80,6 @@ function translate(entry){
     }
 }
 
-function validate(i) {
-    const validArr = ["rock", "paper", "scissors"];
-    if (validArr.indexOf(i) !== -1){
-        return true;
-    }
-    else{
-        throw "Invalid Entry. Expected: Rock, Paper, or Scissors";
-    }
-}
-
 game();
 
 
