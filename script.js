@@ -51,16 +51,29 @@ function game(){
             if (win===1){
                 playerScore++;
                 printScore(playerScore,computerScore);
+                checkGameOver(playerScore, computerScore);
             }
             else if (win===2){
                 computerScore++;
                 printScore(playerScore,computerScore);
+                checkGameOver(playerScore, computerScore);
             }
             else {
                 printScore(playerScore,computerScore);
             }
         });
     });
+}
+
+function checkGameOver(ps,cs){
+    if ((ps+cs) === 5){
+        if (ps > cs){
+            alert("Game over! You Win!");
+        }
+        else{
+            alert("Game over! Computer Wins!");
+        }
+    }
 }
 
 function printScore(ps,cs){
