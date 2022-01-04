@@ -43,18 +43,22 @@ function playRound(player, computer) {
 function game(){
     let playerScore = 0, computerScore = 0;
 
+    const player = document.querySelector('#playerScore');
+    const computer = document.querySelector('#computerScore');
+
     const buttons = document.querySelectorAll('button');
-    
     buttons.forEach((button) => {
         button.addEventListener('click', () => {
             let win = playRound(button.id, computerPlay());
             if (win===1){
                 playerScore++;
+                player.textContent = "Player: "+playerScore;
                 printScore(playerScore,computerScore);
                 checkGameOver(playerScore, computerScore);
             }
             else if (win===2){
                 computerScore++;
+                computer.textContent = "Computer: "+computerScore;
                 printScore(playerScore,computerScore);
                 checkGameOver(playerScore, computerScore);
             }
