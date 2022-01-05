@@ -77,6 +77,7 @@ function checkGameOver(ps,cs){
         else{
             alert("Game over! Computer Wins!");
         }
+        reload();
     }
 }
 
@@ -85,16 +86,16 @@ function printScore(ps,cs){
 
 }
 
-// function reload() {
-//     const container = document.querySelector('#container');
-//     const btns = document.querySelectorAll('button');
-//     btns.forEach((button) => {
-//         button.style.visibility='hidden';
-//     });
-//     const reload = document.querySelector('#reload');
-//     reload.addEventListener('click', () => location.reload());
-//     reload.style.display='block';
-// }
+function reload() {
+    const container = document.querySelector('#container');
+    const btns = document.querySelectorAll('button');
+    btns.forEach((button) => {
+        button.style.display='none';
+    });
+    const reload = document.querySelector('#reload');
+    reload.addEventListener('click', () => location.reload());
+    reload.style.display='block';
+}
 
 function translate(entry){
     const dict = {
