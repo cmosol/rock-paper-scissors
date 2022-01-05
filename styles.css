@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Futura';
+    font-size: xx-large;
+}
+
+.ui { 
+display: flex;
+gap: 20px;
+}
+
+button {
+    font-family: 'Futura';
+    border: none;
+    background-color: rgb(255, 195, 173);
+    font-size: larger;
+    border-radius: 8px;
+    padding: 5px;
+    
+}
+
+.score {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+ul {
+    display: flex;
+    gap: 30px;
+}
+
+li {
+    list-style: none;
+}
